@@ -1,18 +1,21 @@
+from math import sqrt
 
-"""Документация модуля. Описывает работу классов и функций. 
-Размещается в верхней части файла (начиная с первой строки).
-"""
-def tricky_func(self):
-    """Описывает работу функции tricky_func."""
+message = '''Добро пожаловать в самую лучшую программу для вычисления
+          квадратного корня из заданного числа'''
+print(message)
 
-class Test:
-    """Класс Test используется для демонстрации docstring."""
-    def first(self):
-        """Описывает метод first и демонстрирует перенос строки 
-        документации.
-        """
 
-print(__doc__)
-print(tricky_func.__doc__)
-print(Test.__doc__)
-print(Test.first.__doc__)
+def CalculateSquareRoot(Number):
+    """ Вычисляет квадратный корень"""
+    return sqrt(Number)
+
+
+def calc(your_number):
+    if your_number <= 0:
+        return
+    print(f"""Мы вычислили квадратный корень из введённого вами числа.
+           Это будет: {CalculateSquareRoot(your_number)}""")
+
+
+print(message)
+calc(25.5)
