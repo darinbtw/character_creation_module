@@ -101,3 +101,34 @@ if __name__ == '__main__':
     print('Воитель, Маг, Лекарь')
     char_class: str = choice_char_class()
     print(start_training(char_name, char_class))
+
+
+DEFAULT_ATTACK = 5
+DEFAULT_DEFENCE = 10
+class Character:
+    RANGE_VALUE_ATTACK = (1,3)
+    RANGE_VALUE_DEFENCE = (1,5)
+    def __init__(self, name:str) -> str:
+        self.name = name
+
+
+    def attack(self) -> str:
+        value_attack = DEFAULT_ATTACK + randint(*self.RANGE_VALUE_ATTACK)
+        print(f'{self.name} нанёс противнику урокн, равный {value_attack}')
+
+
+    def defence(self) -> str:
+        value_defence = DEFAULT_DEFENCE + randint(*self.RANGE_VALUE_DEFENCE)
+        print(f'{self.name} блокировал {value_defence} ед. урона')
+
+
+class Warrior(Character):
+    pass
+
+
+class Mage(Character):
+    pass
+
+
+class Healer(Character):
+    pass
